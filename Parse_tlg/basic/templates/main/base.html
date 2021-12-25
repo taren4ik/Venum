@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"> <!--Строчка, которая делает магию под мобильный экран-->
+    <title> {% block title %}{% endblock %} </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main/css/main.css '%}">
+</head>
+<body>
+    <aside>
+      <img src="{% static 'main/img/venom.svg' %}" alt="logo">
+      <span class="logo">Venum</span> <!--логотип-->
+      <h3>Навигация</h3>
+      <ul>
+          <a href="{% url 'home' %}"><li>Главная</li></a>
+          <a href="{% url 'about' %}"><li>Про нас</li></a>
+          <a href="{% url 'contact' %}"><li>Контакты</li></a>
+      </ul>
+    </aside>
+   <main>
+        {% block body %}{% endblock %}
+   </main>
+</body>
+</html>

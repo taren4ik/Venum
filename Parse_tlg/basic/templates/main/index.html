@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block title %} {{title}} {% endblock %}
+{% block body %}
+<div class="features">
+    <h1>Проверка сообщение пользователя в Телеграм-чате</h1>
+    <form action="/" method="post">
+        {% csrf_token %}
+        <h2>Выберите чат</h2>
+        {{ chats|safe }} <br>
+        <!-- Измените название на кнопке, напишите на ней "Угостить". -->
+        <input type="submit" class="btn btn-success" value="Проверить">
+        <h2>Участники чата</h2>
+        {{ song }}
+    </form>
+
+</div>
+  <!--   {% include 'basic/tt.html' %} вставка кода -->
+{% endblock %}
