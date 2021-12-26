@@ -4,15 +4,15 @@ from bs4 import BeautifulSoup
 
 def find_song():
     url_our = 'https://top-radio.ru/playlist/avtoradio'
-    user_agent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.45 Safari/537.36'
+    user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.85 YaBrowser/21.11.3.910 Yowser/2.5 Safari/537.36'
     headers = {
         'user agent': user_agent,
-        'sec-ch-ua-platform': '"Windows"',
-        'sec-fetch-dest': 'document',
-        'sec-fetch-mode': 'navigate',
-        'sec-fetch-site': 'same-origin',
-        'sec-fetch-user': '?1',
-        'upgrade-insecure-requests': '1',
+        # 'sec-ch-ua-platform': '"Windows"',
+        # 'sec-fetch-dest': 'document',
+        # 'sec-fetch-mode': 'navigate',
+        # 'sec-fetch-site': 'same-origin',
+        # 'sec-fetch-user': '?1',
+        # 'upgrade-insecure-requests': '1',
     }
     html = requests.get(url_our, headers)
     soup = BeautifulSoup(html.content, 'html.parser')
